@@ -1,8 +1,9 @@
 import './App.css';
 import { Route, Routes, HashRouter } from "react-router-dom";
-import NewArtwork from './NewArtwork';
-import Home from "./Home";
-import NavBar from "./NavBar";
+import NewArtwork from './NewArtwork/NewArtwork';
+import Home from "./Home/Home";
+import Gallery from "./Gallery/Gallery";
+import NavBar from "./NavBar/NavBar";
 import { useLocalStorage } from 'react-use';
 
 function App() {
@@ -12,7 +13,6 @@ function App() {
       ...savedArtworks,
       {artwork, poem}
     ])
-
   }
 
   return (
@@ -21,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/newArtwork" element={<NewArtwork onSave={addSavedArtwork}/>}/>
+        <Route path="/gallery" element={<Gallery savedArtworks={savedArtworks}/>} />
       </Routes>
     </HashRouter>
   )

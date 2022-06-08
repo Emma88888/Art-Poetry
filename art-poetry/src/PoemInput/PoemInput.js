@@ -2,10 +2,8 @@
 
 const PoemInput = props => {
 
-    
-
     return (
-        <div>
+        <div className="poem-input-box">
             <textarea
             type="text"
             value={props.text}
