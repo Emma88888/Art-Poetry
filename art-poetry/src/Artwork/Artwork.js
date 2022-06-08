@@ -1,3 +1,5 @@
+import { useLinkClickHandler } from "react-router-dom"
+
 export default function Artwork({artwork}) {
     return (
         <>
@@ -7,3 +9,4 @@ export default function Artwork({artwork}) {
         </>
     )
 }
+
