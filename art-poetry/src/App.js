@@ -1,41 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { Route, Routes, HashRouter } from "react-router-dom";
+import NewArtwork from './NewArtwork';
+import Home from "./Home";
+import NavBar from "./NavBar";
+import { useLocalStorage } from 'react-use';
 
 function App() {
-  const [artworks, setArtworks] = useState([])
-  const [artworkIndex, setArtworkIndex] = useState()
-  const [buttonClicks, setButtonClicks] = useState(0)
+  const [savedArtworks, setSavedArtworks] = useLocalStorage("savedArtworks",[])
+  const addSavedArtwork = (artwork, poem) => {
+    setSavedArtworks([
+      ...savedArtworks,
+      {artwork, poem}
+    ])
 
-  function getNewArtwork() {
-    fetch("https://openaccess-api.clevelandart.org/api/artworks?limit=20&skip=" + buttonClicks * 20)
-      .then((response) => {
-        return response.json()
-      }) 
-      .then((json) => {
-        const newArtworks = [
-          ...artworks,
-          ...json.data
-          .filter((artwork) => {
-            return artwork.images?.web?.url
-          })
-          .map((artwork) => {
-            return artwork.images.web.url
-          })
-        ]
-        console.log(newArtworks)
-        setArtworks(newArtworks)
-        setArtworkIndex(Math.floor(Math.random() * newArtworks.length))
-        setButtonClicks(buttonClicks + 1)
-      })
   }
 
   return (
-    <div className="App">
-      {buttonClicks > 0 && <img src={artworks[artworkIndex]}/>}
-     <button onClick={getNewArtwork}>Click me</button>
-    </div>
-  );
+    <HashRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/newArtwork" element={<NewArtwork onSave={addSavedArtwork}/>}/>
+      </Routes>
+    </HashRouter>
+  )
 }
 
 export default App;
