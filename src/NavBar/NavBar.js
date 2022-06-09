@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 import "./NavBar.css"
 
-const NavBar = (props) => {
-   return <div className="nav-bar" style={{background: props.bg}}>
+const NavBar = () => {
+   return <div className="nav-bar">
        <Link to="/">Home</Link>
        <Link to="/newArtwork">New Artwork</Link>
        <Link to="/Gallery">Gallery</Link>
