@@ -5,14 +5,19 @@
     outline: none;
     border: 0;
     vertical-align: middle;
+    margin-top: 15vh;
+    margin-right: 20vw;
+    margin-bottom: 10vh;
 
 }
 
 .new-art-button {
+    margin-top: 15vh;
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
     display: inline-block;
     outline: none;
     border: 0;
     vertical-align: middle;
+    margin-bottom: 10vh;
 }
