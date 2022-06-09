@@ -42,7 +42,7 @@ textarea {
 }
 
 textarea:focus {
-  border-color: rgb(239, 59, 89);
+  border-color: rgb(238, 17, 187);
   outline: none;
   box-shadow: none;
 }
