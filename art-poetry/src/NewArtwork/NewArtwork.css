@@ -7,3 +7,12 @@
     vertical-align: middle;
 
 }
+
+.new-art-button {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    display: inline-block;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+}
