@@ -1,10 +1,11 @@
-import React from "react"
+import React from "react";
+import "./Home.css";
 
 const Home = () => {
     return (
-      <div>
-        <h1>Art and Poetry </h1>
-        <p>Description</p>
+      <div className="home-div">
+        <h1 className="title">Art and Poetry </h1>
+        <p className="description">Description</p>
       </div>
     );
 }
