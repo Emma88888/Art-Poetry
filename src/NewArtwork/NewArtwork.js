@@ -12,15 +12,9 @@ export default function NewArtwork({onSave}) {
 
 
   function getNewArtwork() {
-    fetch("https://openaccess-api.clevelandart.org/api/artworks?limit=20&skip=" + buttonClicks * 20) /*, {
-        mode: 'no-cors',
-        "Access-Control-Allow-Origin" : "*", 
-        "Access-Control-Allow-Credentials" : true ,
-        "Content-Type": "application/json",
-    }*/
+    fetch("https://openaccess-api.clevelandart.org/api/artworks?limit=20&skip=" + buttonClicks * 20) 
       .then((response) => {
-        /*console.log(response)*/
-        return response.json
+        return response.json()
       }) 
       .then((json) => {
         const newArtworks = [
