@@ -2,12 +2,73 @@
   text-align: center;
 }
 
+body {
+  height: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+h1 {
+  padding-top: 35px;
+  font-weight: lighter;
+}
+
+p {
+  color: blue;
+}
+
+html {
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
 img {
   height: 50vh;
   max-width: 100vw;
 }
 
 textarea {
-  width: 100vw;
-  height: 25vh;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  resize: none;
+  border-color: pink;
+  border-width: 3px;
+  border-radius: 5px;
+}
+
+textarea:focus {
+  border-color: rgb(239, 59, 89);
+  outline: none;
+  box-shadow: none;
+}
+
+.page-container {
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  background: pink;
+  padding: 10px 20px;
+  font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    display: inline-block;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    border-radius: 5px;
+    cursor: pointer; 
 }

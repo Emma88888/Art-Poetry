@@ -3,6 +3,7 @@ import "./NewArtwork.css"
 import { useState } from 'react';
 import Artwork from "../Artwork/Artwork";
 import PoemInput from '../PoemInput/PoemInput';
+import NavBar from "../NavBar/NavBar";
 
 export default function NewArtwork({onSave}) {
   const [artworks, setArtworks] = useState([])
@@ -43,13 +44,16 @@ export default function NewArtwork({onSave}) {
   }
 
   return (
-    <div className="App">
+    <>
+    <NavBar bg="white"/>
+    <div className="App page-container">
       {buttonClicks > 0 && <>
         <Artwork artwork={artworks[artworkIndex]}/>
         <PoemInput text={text} onChange={changeText}/>
-        <button className="save-button" onClick={() => onSave(artworks[artworkIndex], text)}>Save</button>
+        <button className="save-button button" onClick={() => onSave(artworks[artworkIndex], text)}>Save</button>
       </>}
-     <button className="new-art-button" onClick={getNewArtwork}>New art and poem</button>
+     <button className="new-art-button button" onClick={getNewArtwork}>New art and poem</button>
     </div>
+    </>
   );
 }
