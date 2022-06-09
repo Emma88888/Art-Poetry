@@ -1,4 +1,4 @@
-// import React from "react"
+import React from "react"
 
 const PoemInput = props => {
 
@@ -6,7 +6,7 @@ const PoemInput = props => {
         <div className="poem-input-box">
             <textarea
             type="text"
-            rows={510}
+            rows={5}
             value={props.text}
             onChange={(e) => props.onChange(e.target.value)}
             />
