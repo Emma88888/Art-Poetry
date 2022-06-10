@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Art & Poetry
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An app using the Cleveland Museum of Art's [API](https://github.com/ClevelandMuseumArt/openaccess) to bring inspiration to you; click through to view a random image to write about! 
 
-## Available Scripts
+## Wire frame and images
 
-In the project directory, you can run:
+![af849ec5-0134-42cf-9b67-a783cf624913](https://user-images.githubusercontent.com/103523822/173072882-e65c7478-8c45-4366-b259-952d613fe2e3.jpg)
 
-### `npm start`
+## Technologies used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. React.js
+2. API retrieved with fetch
+3. react-use 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation instructions:
 
-### `npm test`
+Deployment coming soon 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User stories
 
-### `npm run build`
+1. As a user, I want to be able to view a wide variety of artworks from different time periods and locations
+2. As a user, I want a clear interface where I can browse without distraction or issues
+3. As a user, I want a randomizer button so I can click through until I see something I like
+4. As a user, I want a large enough space to write a poem in without it compromising the interface
+5. As a user, I want to be able to save my poem 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Unsolved problems
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Fetch is possibly prohibiting my deployment - I will need to refactor the code to see if axios will work.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`
+function getNewArtwork() {
+    fetch("https://openaccess-api.clevelandart.org/api/artworks?limit=20&skip=" + buttonClicks * 20) 
+      .then((response) => {
+        return response.json()
+      }) 
+      .then((json) => {
+        const newArtworks = [
+          ...artworks,
+          ...json.data
+          .filter((artwork) => {
+            return artwork.images?.web?.url
+          })
+          .map((artwork) => {
+            return {
+              image: artwork.images.web.url,
+              artists: artwork.creators.map((creator) => {
+                return (
+                  creator.description
+                )
+              }) .join(", "),
+              description: artwork.wall_description
+            }
+          })
+        ]
+        setArtworks(newArtworks)
+        setArtworkIndex(Math.floor(Math.random() * newArtworks.length))
+        setButtonClicks(buttonClicks + 1)
+      })
+  }
+`
 
-### `npm run eject`
+I lost some CSS while trying to ameliorate file issues, so I want to keep working on the styling.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Resources & credits
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you to Greg, Kenny, and Brian for the de-bugging help, Alison Quaglia for the background animation, and the CMA for providing such wonderful information to the public for free with no limitations. 
