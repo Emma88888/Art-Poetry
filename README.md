@@ -70,4 +70,4 @@ I lost some CSS while trying to ameliorate file issues, so I want to keep workin
 
 ## Resources & credits
 
-Thank you to Greg, Kenny, and Brian for the de-bugging help, Alison Quaglia for the background animation, and the CMA for providing such wonderful information to the public for free with no limitations. 
+Thank you to Greg, Rondell, Kenny, and Brian for the de-bugging help, Alison Quaglia for the background animation, and the CMA for providing such wonderful information to the public for free with no limitations. 
