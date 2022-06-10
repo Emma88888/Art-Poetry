@@ -5,7 +5,6 @@ import Home from "./Home/Home";
 import Gallery from "./Gallery/Gallery";
 import NavBar from "./NavBar/NavBar";
 import { useLocalStorage } from 'react-use';
-// @import url("https://fonts.googleapis.com/css2?family=Goblin+One&family=Rubik+Wet+Paint&display=swap")
 
 function App() {
   const [savedArtworks, setSavedArtworks] = useLocalStorage("savedArtworks",[])

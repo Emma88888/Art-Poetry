@@ -1,7 +1,12 @@
+.App {
+  text-align: center;
+}
+
 body {
   height: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
+  justify-content: center;
 }
 
 h1 {
