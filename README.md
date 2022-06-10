@@ -9,7 +9,7 @@ An app using the Cleveland Museum of Art's [API](https://github.com/ClevelandMus
 ## Technologies used
 
 1. React.js
-2. 2 API retrieved with fetch
+2. API retrieved with fetch
 3. react-use 
 
 ## Installation instructions:
