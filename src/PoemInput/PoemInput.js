@@ -6,7 +6,7 @@ const PoemInput = props => {
         <div className="poem-input-box">
             <textarea
             type="text"
-            rows={10}
+            rows={15}
             value={props.text}
             onChange={(e) => props.onChange(e.target.value)}
             />

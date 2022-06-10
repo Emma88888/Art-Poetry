@@ -10,12 +10,13 @@ body {
 }
 
 h1 {
-  padding-top: 35px;
+  padding-top: 20px;
   font-weight: lighter;
 }
 
 p {
-  color: blue;
+  color: black;
+  font-size: 20px;
 }
 
 html {
