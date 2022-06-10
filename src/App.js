@@ -18,7 +18,6 @@ function App() {
 
   return (
     <HashRouter>
-      <NavBar />
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/newArtwork" element={<NewArtwork onSave={addSavedArtwork}/>}/>
