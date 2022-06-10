@@ -8,7 +8,6 @@ export default function Gallery({savedArtworks}) {
     <div className="page-container">
     {savedArtworks.map((savedArtwork) => {
         return (
-        //    {savedArtworks.map((savedArtwork, artworkIndex) => {
                 <div key={savedArtwork.poem} className="card">
                 <Artwork artwork={savedArtwork.artwork}/>
                 <div>{savedArtwork.poem}</div>

@@ -35,7 +35,6 @@ export default function NewArtwork({onSave}) {
             }
           })
         ]
-
         setArtworks(newArtworks)
         setArtworkIndex(Math.floor(Math.random() * newArtworks.length))
         setButtonClicks(buttonClicks + 1)
